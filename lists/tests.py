@@ -26,4 +26,4 @@ class HomePageTest(TestCase):
 
         response = home_page(request)                 # calls function under test
 
-        self.assertIn('A new list item', response.context.decode()) #assertion
+        self.assertIn('A new list item', response.content.decode()) #assertion
