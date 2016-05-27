@@ -21,8 +21,9 @@ class HomePageTest(TestCase):
     def test_home_page_can_save_a_POST_request(self):
         request = HttpRequest()
         request.method = 'POST'
-        request.POST['item_text'] = 'A new list item'
+        request.POST['item_text'] = 'A new list item' # first three lines set up
+                                                      # test
 
-        response = home_page(request)
+        response = home_page(request)                 # calls function under test
 
-        self.assertIn('A new list item', response.context.decode())
+        self.assertIn('A new list item', response.context.decode()) #assertion
